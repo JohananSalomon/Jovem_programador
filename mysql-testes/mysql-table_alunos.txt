@@ -1,0 +1,10 @@
+create table alunos (
+id int auto_increment primary key,
+nome varchar (45) not null,
+idade int not null);
+
+select * from alunos;
+
+insert into alunos (nome,idade) values('johanan',19);
+insert into alunos (nome,idade) values ('pedro',20);
+insert into alunos (nome,idade) values ('jose',89);
