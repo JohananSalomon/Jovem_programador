@@ -3,8 +3,28 @@ id int auto_increment primary key,
 nome varchar (45) not null,
 idade int not null);
 
-select * from alunos;
+create table animais (
+id int auto_increment primary key,
+nome varchar (100) not null,
+raca varchar (50) not null,
+idade decimal(10,2) not null,
+cor varchar (20) not null
+);
+
+select * from alunos; 
+select * from animais;
+
+insert into animais (nome,raca,idade,cor) values ('scooby','pitbull',3.2,'marrom');
+insert into animais (nome,raca,idade,cor) values ('zeus','siames',10.2,'branco');
+insert into animais (nome,raca,idade,cor) values ('cacau','preto',3.2,'preto');
+insert into animais (nome,raca,idade,cor) values ('hachi','husky siberiano',12.0,'preto e branco');
 
 insert into alunos (nome,idade) values('johanan',19);
 insert into alunos (nome,idade) values ('pedro',20);
 insert into alunos (nome,idade) values ('jose',89);
+
+delete from alunos;
+
+drop table alunos;
+
+SET SQL_SAFE_UPDATES =0;
