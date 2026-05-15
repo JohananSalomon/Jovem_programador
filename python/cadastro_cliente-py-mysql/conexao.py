@@ -2,14 +2,15 @@
 import mysql.connector
 
 #executa uma função da lib que realiza a conexão
-def conexao ():
+def conectar ():
         conexao = mysql.connector.connect(
             host = "localhost",
             user = "root",
-            password = "admin",
+            password = "",
             database = "barbearia"
     )
         print ("conectado")
         cursor = conexao.cursor(conexao)
-        return conexao, cursor
-      
+        return conexao
+
+conectar()
