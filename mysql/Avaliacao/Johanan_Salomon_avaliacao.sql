@@ -78,6 +78,14 @@ foreign key (id_pedido) references pedido (id_pedido)
 );
 create view vw_pizza_cardapio AS select p.nome as nome_pizza, p.sabor, p.tamanho, p.preco as pizza, c.nome from categoria c join pizza p on c.id_categoria = p.id_categoria; 
 
-delimiter aqui;
+DELIMITER //
+create trigger trg_log_pedido
+after insert on pedido
+for each row
+begin
+	insert into log_pedidos (id_pedido,data_hora,mensagem)
+    values (new.id_pedido, now(), 'Novo Pedido Registrado');
+END //
+DELIMITER ;
 
 select * from vw_pizza_cardapio where nome = "especial";
