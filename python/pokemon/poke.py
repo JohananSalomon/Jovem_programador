@@ -10,18 +10,23 @@ print ("Status: ",resposta.status_code)
 
 dados = resposta.json()
 
-print("--- informações gerais ---")
-print ("Nome: ",dados['name'])
-print ("Número: ",dados['id'])
-print ("Altura: ",dados['height'])
-print ("Peso: ",dados['weight'])
+def mostrar_informacoes():
+    print("--- informações gerais ---")
+    print ("Nome: ",dados['name'])
+    print ("Número: ",dados['id'])
+    print ("Altura: ",dados['height'])
+    print ("Peso: ",dados['weight'])
 
-print ("--- Habilidades ---")
-for item in dados ["types"]:
-    print("-", item ["type"]["name"])
+def mostrar_habilidades():
+    print ("--- Habilidades ---")
+    for item in dados ["types"]:
+        print("-", item ["type"]["name"])
 
-print("--- stats ---")
-for stat in dados ["stats"]:
-    print("-", stat ["stat"]["name"], ":",stat["base_stat"])
+def mostrar_stats():
+    print("--- stats ---")
+    for stat in dados ["stats"]:
+        print("-", stat ["stat"]["name"], ":",stat["base_stat"])
 
-atividade função pra mostrar e pra exibir
+mostrar_informacoes()
+mostrar_habilidades()
+mostrar_stats()
